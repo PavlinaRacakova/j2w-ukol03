@@ -1,5 +1,8 @@
 package cz.czechitas.java2webapps.ukol3.entities;
 
+import lombok.Getter;
+
+@Getter
 public class BusinessCard {
 
     private String name;
@@ -30,41 +33,5 @@ public class BusinessCard {
     private String swapTownAndZipCode(String townAndZipCode) {
         String zipCode = townAndZipCode.substring(townAndZipCode.length() - 6).trim();
         return String.format("%s %s", townAndZipCode.replace(zipCode, ""), zipCode);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCompany() {
-        return company;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getTownAndZipCode() {
-        return townAndZipCode;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getTownAndZipCodeInReversedFormat() {
-        return townAndZipCodeInReversedFormat;
     }
 }
