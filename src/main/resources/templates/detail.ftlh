@@ -13,7 +13,7 @@
         <div class="udaje">
             <div class="adresa">
                 <div>${businessCard.street}</div>
-                <div><span>${businessCard.townAndZipCodeInReversedFormat}</span></div>
+                <div><span>${businessCard.getTownAndZipCodeInReversedFormat()}</span></div>
             </div>
             <div class="kontakty">
                 <div><i class="las la-at"></i> <span>${(businessCard.email)!missingDataMessage}</span></div>
@@ -24,7 +24,7 @@
     </div>
 
     <div class="mapa">
-        <iframe style="border:none" src="https://frame.mapy.cz/?q=${businessCard.address?url}" width="100%"
+        <iframe style="border:none" src="https://frame.mapy.cz/?q=${businessCard.getAddress()?url}" width="100%"
                 height="100%" frameborder="0"></iframe>
     </div>
 

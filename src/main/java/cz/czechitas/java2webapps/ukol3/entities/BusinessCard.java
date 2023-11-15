@@ -1,19 +1,19 @@
 package cz.czechitas.java2webapps.ukol3.entities;
 
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
+@Setter
 public class BusinessCard {
 
     private String name;
     private String company;
     private String street;
     private String townAndZipCode;
-    private String address;
     private String email;
     private String phoneNumber;
     private String website;
-    private String townAndZipCodeInReversedFormat;
 
     public BusinessCard() {
     }
@@ -26,12 +26,14 @@ public class BusinessCard {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.website = website;
-        address = String.format("%s, %s", street, townAndZipCode);
-        townAndZipCodeInReversedFormat = swapTownAndZipCode(townAndZipCode);
     }
 
-    private String swapTownAndZipCode(String townAndZipCode) {
+    public String getTownAndZipCodeInReversedFormat() {
         String zipCode = townAndZipCode.substring(townAndZipCode.length() - 6).trim();
-        return String.format("%s %s", townAndZipCode.replace(zipCode, ""), zipCode);
+        return String.format("%s %s", zipCode, townAndZipCode.replace(zipCode, ""));
+    }
+
+    public String getAddress() {
+        return String.format("%s, %s", street, townAndZipCode);
     }
 }

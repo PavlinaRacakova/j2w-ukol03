@@ -15,7 +15,7 @@
                 <div class="udaje">
                     <div class="adresa">
                         <div>${businessCard.street}</div>
-                        <div><span>${businessCard.townAndZipCodeInReversedFormat}</span></div>
+                        <div><span>${businessCard.getTownAndZipCodeInReversedFormat()}</span></div>
                     </div>
                     <div class="kontakty">
                         <div><i class="las la-at"></i> <span>${(businessCard.email)!missingDataMessage}</span></div>
