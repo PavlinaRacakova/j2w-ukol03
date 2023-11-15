@@ -12,7 +12,7 @@ import java.util.List;
  * Kontroler obsluhující zobrazování vizitek.
  */
 @Controller
-public class VizitkaController {
+public class BusinessCardController {
 
     private final List<BusinessCard> businessCards = List.of(
             new BusinessCard("Jitka Nová", "Oracle", "Na příkopě 17", "Praha 1 110 00", "jitkaN@gmail.com", "196 574 222", "jitka.cz"),
@@ -24,8 +24,8 @@ public class VizitkaController {
     private final String missingDataMessage = "n/a";
 
     @GetMapping("/")
-    public ModelAndView seznam() {
-        ModelAndView modelAndView = new ModelAndView("seznam");
+    public ModelAndView list() {
+        ModelAndView modelAndView = new ModelAndView("list");
         modelAndView.addObject("businessCards", businessCards);
         modelAndView.addObject("missingDataMessage", missingDataMessage);
         return modelAndView;
